@@ -1,0 +1,11 @@
+version: '3.7'
+
+networks:
+  vlan:
+    name: vlan
+    driver: macvlan
+    driver_opts:
+      parent: eno1
+    ipam:
+      config:
+        - subnet: 10.0.0.0/16
