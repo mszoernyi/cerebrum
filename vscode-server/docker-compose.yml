@@ -1,0 +1,17 @@
+version: '3.7'
+
+services:
+  vscode:
+    container_name: vscode
+    image: codercom/code-server
+    restart: unless-stopped
+    # user: '500'
+    volumes:
+      - /var/sinubibus:/home/coder/project
+    networks:
+      vlan:
+        ipv4_address: 10.0.254.8
+    mac_address: '12:34:10:00:01:08'
+    environment:
+      DISABLE_TELEMETRY: 'true'  
+
