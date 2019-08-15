@@ -1,0 +1,18 @@
+version: '3.7'
+
+services:
+  dev:
+    container_name: dev
+    image: ronalddddd/dev-container
+    restart: unless-stopped
+    user: "500"
+    volumes:
+      - /var/sinubibus:/projects
+    ports:
+      - "1234:22"
+    networks:
+      vlan:
+        ipv4_address: 10.0.254.65
+    mac_address: '12:34:10:00:fe:65'
+    environment:
+      DEVELOPER_PUBLIC_KEY: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFwrONmnd0/pdeB5+Rkth/hBsN+fCo826OmN+W4LOkUW mike@Mikes-MacBook-Air.local
